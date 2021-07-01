@@ -3,8 +3,11 @@ global myrand
 
 section .text
 mysrand:
+	push	rdi
+	shl	rdi,16
 	mov	[seed], rdi
 	mov	rax, [seed]
+	pop rdi
 	ret
 	
 myrand:
